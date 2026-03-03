@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cestakrovnovaze.info/sitemap.xml
