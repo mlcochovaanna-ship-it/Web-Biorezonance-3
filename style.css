@@ -585,15 +585,15 @@ img {
 }
 
 .icon-box i {
-    width: 90px;
-    height: 90px;
+    width: 70px;
+    height: 70px;
     background: var(--gradient-btn);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--white);
-    font-size: 2.5rem;
+    font-size: 2rem;
     box-shadow: var(--shadow-icon);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
@@ -753,15 +753,15 @@ img {
 }
 
 .step-icon-box i {
-    width: 90px;
-    height: 90px;
+    width: 70px;
+    height: 70px;
     background: var(--gradient-btn);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--white);
-    font-size: 2.5rem;
+    font-size: 2rem;
     box-shadow: var(--shadow-icon);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
@@ -810,15 +810,15 @@ img {
 .process-num-box {
     margin-bottom: 0;
     flex-shrink: 0;
-    width: 90px;
-    height: 90px;
+    width: 70px;
+    height: 70px;
     background: var(--gradient-btn);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--white);
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 800;
     font-family: 'Montserrat', sans-serif;
     box-shadow: var(--shadow-icon);
@@ -1144,10 +1144,10 @@ img {
 .quote-icon-box {
     margin-bottom: 0;
     flex-shrink: 0;
-    width: 90px;
-    height: 90px;
+    width: 70px;
+    height: 70px;
     background: var(--gradient-btn);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1157,7 +1157,7 @@ img {
 }
 
 .quote-icon-box i {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--white);
 }
 
@@ -1498,15 +1498,15 @@ img {
 }
 
 .price-item i {
-    width: 90px;
-    height: 90px;
+    width: 70px;
+    height: 70px;
     background: var(--gradient-btn);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--white);
-    font-size: 2.5rem;
+    font-size: 2rem;
     box-shadow: var(--shadow-icon);
     flex-shrink: 0;
     transition: all 0.3s ease;
@@ -1756,14 +1756,14 @@ img {
 }
 
 .method i {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     background: var(--gradient-btn);
     border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: var(--white);
     box-shadow: var(--shadow-icon);
     transition: all 0.3s ease;
@@ -2074,14 +2074,14 @@ img {
 }
 
 .notice-icon-box i {
-    width: 90px;
-    height: 90px;
+    width: 70px;
+    height: 70px;
     background: var(--gradient-btn);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--white);
     box-shadow: var(--shadow-icon);
     transition: all 0.3s ease;
@@ -2092,7 +2092,7 @@ img {
     transform: scale(1.05) rotate(5deg);
 }
 
-.notice-box h3 {
+.notice-box h2 {
     font-size: 1.8rem;
     margin: 0;
     color: var(--text-color);
@@ -2423,7 +2423,7 @@ img {
 }
 
 .connections-belt .sub-heading {
-    font-family: 'Fraunces', serif;
+    font-family: 'Fraunces', serif !important;
     font-size: 2.2rem;
     color: #333333;
     -webkit-text-fill-color: initial;
