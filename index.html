@@ -284,7 +284,7 @@
                 <p>Biorezonance nenahrazuje lékařskou péči. Vhodně ji&nbsp;doplňuje.</p>
             </div>
 
-            <div class="info-video-split">
+            <div class="info-video-split video-row">
                 <div class="info-text-content animate-fade-in">
                     <div class="glass-card glass">
                         <h3>O&nbsp;biorezonanci</h3>
@@ -300,21 +300,34 @@
                     </div>
                 </div>
                 <div class="video-area animate-fade-in" style="animation-delay: 0.2s;">
-                    <div class="video-preview">
+                    <a class="video-preview" href="https://www.youtube.com/watch?v=jspzKjGALrU" target="_blank"
+                        rel="noopener">
                         <div class="video-overlay">
                             <div class="play-btn">
                                 <i class="fa-solid fa-play"></i>
                             </div>
-                            <span>Přehrát video o&nbsp;metodě</span>
+                            <span>Přehrát video o&nbsp;principu biorezonance</span>
                         </div>
                         <img src="Obrazky/biorezonance-4.webp" alt="Video náhled" class="video-thumbnail">
-                    </div>
+                    </a>
                 </div>
             </div>
 
-            <div class="quotes-section">
-                <div class="quotes-container">
-                    <div class="quote-item animate-fade-in">
+            <div class="info-video-split video-row" style="margin-top: 60px;">
+                <div class="video-area animate-fade-in">
+                    <a class="video-preview" href="https://www.youtube.com/watch?v=Vtfg0rNQ5ho" target="_blank"
+                        rel="noopener">
+                        <div class="video-overlay">
+                            <div class="play-btn">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <span>Přehrát video<br>Jak funguje biorezonance Bicom</span>
+                        </div>
+                        <img src="Obrazky/biorezonance-6.webp" alt="Přístroj BICOM v ordinaci" class="video-thumbnail">
+                    </a>
+                </div>
+                <div class="quotes-container quotes-container-stacked animate-fade-in" style="animation-delay: 0.2s;">
+                    <div class="quote-item">
                         <div class="quote-card glass">
                             <div class="quote-content">
                                 <div class="quote-header">
@@ -328,7 +341,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="quote-item animate-fade-in" style="animation-delay: 0.3s;">
+                    <div class="quote-item">
                         <div class="quote-card glass">
                             <div class="quote-content">
                                 <div class="quote-header">
@@ -346,7 +359,7 @@
         </section>
 
         <!-- S čím vám můžeme pomoci -->
-        <section id="pomoc" class="services-list container section-padding text-center">
+        <section id="pomoc" class="services-list container section-padding text-center" style="margin-top: 60px;">
             <span class="sub-heading">Široké spektrum využití</span>
             <h2>S čím vám můžeme pomoci?</h2>
             <p class="text-center">Biorezonancí lze řešit <strong>akutní i dlouhodobé potíže</strong> a hledat jejich
@@ -849,6 +862,16 @@
         <img class="modal-content" id="imgFull" alt="Zvětšený náhled">
         <button class="modal-next" aria-label="Následující obrázek"><i class="fa-solid fa-chevron-right"></i></button>
         <div id="modalCaption"></div>
+    </div>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <div class="video-modal-content">
+            <iframe id="videoFrame" src="" title="Video o metodě biorezonance" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
     </div>
 
     <!-- Cookie Bar -->

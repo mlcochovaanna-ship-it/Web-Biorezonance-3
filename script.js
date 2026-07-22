@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initForm();
     fixTypography();
     initLightbox();
+    initVideoModal();
+    initMatchRowHeights();
     initScrollTop();
 });
 
@@ -260,6 +262,71 @@ function initLightbox() {
         } else if (e.key === 'ArrowRight' && currentGalleryGroup.length > 1) {
             updateModal(currentIndex + 1);
         }
+    });
+}
+
+/**
+ * Video Modal (embeds the YouTube video on click instead of leaving the site)
+ */
+function initVideoModal() {
+    const triggers = document.querySelectorAll('.video-preview');
+    const modal = document.getElementById('videoModal');
+    if (!triggers.length || !modal) return;
+
+    const closeBtn = modal.querySelector('.modal-close');
+    const frame = document.getElementById('videoFrame');
+
+    function closeModal() {
+        modal.style.display = 'none';
+        frame.src = '';
+        document.body.style.overflow = 'auto';
+    }
+
+    triggers.forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+            const videoUrl = trigger.getAttribute('href');
+            const videoId = new URL(videoUrl, window.location.href).searchParams.get('v');
+            if (!videoId) return; // odkaz na video zatím není doplněný
+
+            e.preventDefault();
+            frame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
+    });
+}
+
+/**
+ * Match the height of the second video/quotes row to the first
+ * (text + video row above it), so both rows line up visually.
+ */
+function initMatchRowHeights() {
+    const rows = document.querySelectorAll('.video-row');
+    if (rows.length < 2) return;
+
+    const [firstRow, secondRow] = rows;
+
+    function applyHeight() {
+        secondRow.style.height = '';
+        if (window.innerWidth > 992) {
+            secondRow.style.height = firstRow.offsetHeight + 'px';
+        }
+    }
+
+    applyHeight();
+
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(applyHeight, 150);
     });
 }
 
