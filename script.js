@@ -176,8 +176,8 @@ function initLightbox() {
     let currentIndex = 0;
 
     function updateModal(index) {
-        if (index < 0) index = currentGalleryGroup.length - 1;
-        if (index >= currentGalleryGroup.length) index = 0;
+        if (index < 0) index = 0;
+        if (index >= currentGalleryGroup.length) index = currentGalleryGroup.length - 1;
 
         currentIndex = index;
         const img = currentGalleryGroup[currentIndex];
@@ -189,13 +189,13 @@ function initLightbox() {
             modalImg.style.opacity = '1';
         }, 150);
 
-        // Hide arrows if only one image in group
+        // Hide arrows if only one image in group, or at the start/end of the gallery
         if (currentGalleryGroup.length <= 1) {
             if (prevBtn) prevBtn.style.display = 'none';
             if (nextBtn) nextBtn.style.display = 'none';
         } else {
-            if (prevBtn) prevBtn.style.display = 'flex';
-            if (nextBtn) nextBtn.style.display = 'flex';
+            if (prevBtn) prevBtn.style.display = currentIndex === 0 ? 'none' : 'flex';
+            if (nextBtn) nextBtn.style.display = currentIndex === currentGalleryGroup.length - 1 ? 'none' : 'flex';
         }
     }
 
