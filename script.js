@@ -71,17 +71,29 @@ function initNavigation() {
 function initFAQ() {
     const faqItems = document.querySelectorAll('.faq-item');
 
+    function toggleItem(item) {
+        const isActive = item.classList.contains('active');
+
+        // Close all items
+        faqItems.forEach(i => {
+            i.classList.remove('active');
+            i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+
+        // Toggle current
+        if (!isActive) {
+            item.classList.add('active');
+            item.querySelector('.faq-question').setAttribute('aria-expanded', 'true');
+        }
+    }
+
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
-        question.addEventListener('click', () => {
-            const isActive = item.classList.contains('active');
-
-            // Close all items
-            faqItems.forEach(i => i.classList.remove('active'));
-
-            // Toggle current
-            if (!isActive) {
-                item.classList.add('active');
+        question.addEventListener('click', () => toggleItem(item));
+        question.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleItem(item);
             }
         });
     });
@@ -223,11 +235,19 @@ function initLightbox() {
         });
     });
 
+    function closeImageModal() {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
     if (closeBtn) {
-        closeBtn.onclick = function () {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
+        closeBtn.addEventListener('click', closeImageModal);
+        closeBtn.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                closeImageModal();
+            }
+        });
     }
 
     if (prevBtn) {
@@ -296,6 +316,12 @@ function initVideoModal() {
     });
 
     closeBtn.addEventListener('click', closeModal);
+    closeBtn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            closeModal();
+        }
+    });
     modal.addEventListener('click', (e) => {
         if (e.target === modal) closeModal();
     });
