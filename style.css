@@ -585,8 +585,7 @@ img {
 
 /* Specific adjustment for the dog image */
 .bento-item:last-child .card-image-wrapper img {
-    object-position: 100% calc(5% - 10px);
-    /* Posunuto o 10 bodů nahoru */
+    object-position: 100% 38%;
     transform: scale(1.1);
 }
 
@@ -1789,7 +1788,6 @@ img {
 .method span {
     color: #333333;
     font-size: 1rem;
-    word-break: break-word;
 }
 
 .method i {
@@ -1948,6 +1946,10 @@ img {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.footer-info-col p a {
+    min-width: 0;
 }
 
 .footer-info-col i {
@@ -2426,7 +2428,6 @@ img {
     .contact-methods .method span {
         font-size: 0.95rem;
         font-weight: 700;
-        word-break: break-word;
         color: #333333 !important;
         display: block;
         width: 100%;
